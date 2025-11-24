@@ -1,54 +1,156 @@
-<!doctype html> <html lang="de"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"> <title>Romanceast - Online Dating</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <style> :root{--ink:#1F2D2E;--muted:#6B7380;--bg:#F6F7F8;--brand:#FF4036;--ok:#2ECC71;--border:#E5E7EB;--card:#fff;--maxw:960px} *{box-sizing:border-box} html,body{height:100%} body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale} a{color:inherit;text-decoration:none} img{max-width:100%;display:block} .wrap{min-height:100%;display:flex;flex-direction:column} .topbar{position:fixed;inset:0 auto auto 0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;background:#fff;backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid var(--border);padding:0 12px;z-index:50} .topbar__logo{height:24px;object-fit:contain} .topbar__spacer{width:40px} .iconbtn{appearance:none;border:none;background:transparent;border-radius:999px;padding:8px;cursor:pointer;color:var(--ink)} .iconbtn:hover{background:#f3f4f6} main{flex:1;padding-top:56px} .container{max-width:var(--maxw);margin:0 auto;padding:0 16px} .hero{text-align:center;padding:36px 0 12px} .hero h1{font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px} .hero p{color:var(--muted);font-size:14px;line-height:1.6;margin:0 auto;max-width:36ch} /* Coverflow */ .coverflow{position:relative;height:260px;margin:16px auto 6px;overflow:hidden} .coverflow__track{position:relative;height:100%} .slide{position:absolute;top:0;left:50%;width:62%;height:100%;transform:translateX(-50%) scale(1);transition:transform .35s ease,left .35s ease,opacity .25s ease;border-radius:20px;border:4px solid #fff;box-shadow:0 8px 30px rgba(0,0,0,.12);overflow:hidden;background:#fff;cursor:pointer;opacity:0;pointer-events:none;z-index:1} .slide img{width:100%;height:100%;object-fit:cover;display:block} .coverflow .edge-fade{position:absolute;top:0;bottom:0;width:18%;pointer-events:none;z-index:5} .edge-fade--left{left:0;background:linear-gradient(to right,var(--bg) 0%,rgba(246,247,248,0) 80%)} .edge-fade--right{right:0;background:linear-gradient(to left,var(--bg) 0%,rgba(246,247,248,0) 80%)} .slide.is-center{left:50%;transform:translateX(-50%) scale(1);opacity:1;pointer-events:auto;z-index:3} .slide.is-left{left:26%;transform:translateX(-50%) scale(.9);opacity:1;pointer-events:auto;z-index:2} .slide.is-right{left:74%;transform:translateX(-50%) scale(.9);opacity:1;pointer-events:auto;z-index:2} .slide.is-hidden-left{left:-20%;transform:translateX(-50%) scale(.8);opacity:0;pointer-events:none} .slide.is-hidden-right{left:120%;transform:translateX(-50%) scale(.8);opacity:0;pointer-events:none} /* Quiz */ .quiz{max-width:480px;margin:10px auto 28px;padding:0 4px} .quiz__eyebrow{text-align:center;color:var(--brand);font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px} .quiz__card{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.05);padding:16px} .quiz__q{font-weight:700;font-size:18px;line-height:1.35;margin:0 0 12px;color:var(--ink);text-align:center} .quiz__opts{display:grid;grid-template-columns:1fr 1fr;gap:10px} .qbtn{padding:12px;border-radius:14px;border:1px solid transparent;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.05);font-weight:600;color:var(--ink);cursor:pointer;transition:all .2s} .qbtn:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 10px 30px rgba(255,64,54,.12)} .quiz__meta{margin-top:10px;text-align:center;color:#9CA3AF;font-size:12px} footer{border-top:1px solid var(--border);padding:18px 0 28px;background:var(--bg);margin-top:auto} .links{display:flex;flex-wrap:wrap;gap:8px 12px;justify-content:center;color:#6B7380;font-size:12px;margin:0 0 10px} .copy{color:#9CA3AF;font-size:12px;text-align:center;margin:0 0 8px} .made{font-size:12px;text-align:center;color:#6B7380}.made a{color:#0066cc;text-decoration:underline} @media (min-width:640px){.hero h1{font-size:28px}.hero p{font-size:16px;max-width:48ch}.coverflow{height:320px}.slide{width:58%}.slide.is-left{left:28%}.slide.is-right{left:72%}} @media (min-width:960px){.topbar{height:64px}main{padding-top:64px}.hero{padding:56px 0 16px}.hero h1{font-size:34px}} </style> </head> <body> <noscript>Please enable JavaScript.</noscript> <div class="wrap"> <header class="topbar"> <div class="topbar__spacer" aria-hidden="true"></div> <img class="topbar__logo" src="https://romanceast.com/land-static/svg/logos/black/romanceast.svg" alt="Romanceast"> <button class="iconbtn" aria-label="Menu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path> </svg> </button> </header>
-<main>
-  <section class="container hero" aria-labelledby="hero-title">
-    <h1 id="hero-title">Nutze deine Chance auf ein qualitativ hochwertiges Match</h1>
-    <p>Fülle kurz den Fragebogen aus und starte mit dem Online-Dating, wie es dir gefällt.</p>
-  </section>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Romanceast - Online Dating</title>
+    
+    <!-- 1. Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. Tailwind CSS CDN (替代原本丢失的CSS文件) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-  <section class="container" aria-label="Profiles">
-    <div class="coverflow" id="coverflow" role="region" aria-roledescription="carousel" aria-label="Profiles">
-      <div class="coverflow__track">
-        <article class="slide" data-index="0" tabindex="0" aria-selected="false">
-          <img src="https://i.gstatvb.com/fa0fe7a8614fded8d64f82d28507ef191753962528.rng.webp" alt="Profilbild 1">
-        </article>
-        <article class="slide" data-index="1" tabindex="0" aria-selected="false">
-          <img src="https://i.gstatvb.com/fc0a4f65002a32153a0e829f960f5d3f1753962528.rng.webp" alt="Profilbild 2">
-        </article>
-        <article class="slide" data-index="2" tabindex="0" aria-selected="true">
-          <img src="https://i.gstatvb.com/51e374c607fd9ce468cad39b242dc8f11753962528.rng.webp" alt="Profilbild 3">
-        </article>
-        <article class="slide" data-index="3" tabindex="0" aria-selected="false">
-          <img src="https://i.gstatvb.com/c1e63704a94bfd2f12cf8a2f122bbd901753962529.rng.webp" alt="Profilbild 4">
-        </article>
-        <article class="slide" data-index="4" tabindex="0" aria-selected="false">
-          <img src="https://i.gstatvb.com/ee44023306cf6ff908f7f42c153841741753962529.rng.webp" alt="Profilbild 5">
-        </article>
-      </div>
-      <div class="edge-fade edge-fade--left" aria-hidden="true"></div>
-      <div class="edge-fade edge-fade--right" aria-hidden="true"></div>
-    </div>
-  </section>
+    <!-- 3. 自定义 CSS 修复 -->
+    <style>
+        /* 移动端基础优化 */
+        body { -webkit-tap-highlight-color: transparent; }
+        
+        /* 修复轮播图在没有React的情况下的样式 */
+        .profile-card {
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* 简单的堆叠效果 */
+        .card-stack { position: relative; height: 350px; width: 100%; display: flex; justify-content: center; align-items: center; }
+        .card-1 { z-index: 30; transform: scale(1.1); animation: float 6s ease-in-out infinite; }
+        .card-2 { z-index: 20; transform: translateX(-60px) scale(0.9) rotate(-10deg); opacity: 0.8; filter: blur(1px); position: absolute; }
+        .card-3 { z-index: 20; transform: translateX(60px) scale(0.9) rotate(10deg); opacity: 0.8; filter: blur(1px); position: absolute; }
+    </style>
+</head>
 
-  <section class="container quiz" id="quiz" aria-live="polite">
-    <h2 class="quiz__eyebrow">Beantworte kurz</h2>
-    <div class="quiz__card">
-      <div class="quiz__q" id="quiz-q">Wähle dein Geschlecht</div>
-      <div class="quiz__opts" id="quiz-opts"></div>
-      <div class="quiz__meta"><span id="quiz-progress">1/3</span></div>
-    </div>
-  </section>
-</main>
+<body class="min-h-screen bg-[#F6F7F8] flex flex-col font-poppins text-[#1F2D2E]">
 
-<footer>
-  <div class="container">
-    <nav class="links" aria-label="Footer links">
-      <a href="#">Nutzungsbedingungen</a><span aria-hidden="true">•</span>
-      <a href="#">Datenschutzrichtlinie</a><span aria-hidden="true">•</span>
-      <a href="#">Cookie-Richtlinie</a><span aria-hidden="true">•</span>
-      <a href="#">Impressum</a>
-    </nav>
-    <p class="copy">© 2025 Romanceast. All rights reserved.</p>
-    <p class="made">Made with <a href="https://heyboss.ai" target="_blank" rel="noopener noreferrer">Heyboss.ai</a></p>
-  </div>
-</footer>
-</div> <script> (function(){ "use strict"; // Coverflow var $track = document.querySelector("#coverflow .coverflow__track"); var $slides = $track ? Array.prototype.slice.call($track.querySelectorAll(".slide")) : []; var current = 2; // start centered (3rd of 5) function applyState(){ if(!$slides.length) return; $slides.forEach(function(el, i){ el.classList.remove("is-center","is-left","is-right","is-hidden-left","is-hidden-right"); el.setAttribute("aria-selected","false"); var d = i - current; if(d === 0){ el.classList.add("is-center"); el.setAttribute("aria-selected","true"); } else if(d === -1){ el.classList.add("is-left"); } else if(d === 1){ el.classList.add("is-right"); } else if(d < -1){ el.classList.add("is-hidden-left"); } else if(d > 1){ el.classList.add("is-hidden-right"); } }); } function clamp(i){ return Math.max(0, Math.min($slides.length-1, i)); } function goTo(i){ current = clamp(i); applyState(); } function next(){ goTo(current+1); } function prev(){ goTo(current-1); } if($slides.length){ $slides.forEach(function(el){ el.addEventListener("click", function(){ var idx = parseInt(el.getAttribute("data-index"), 10); goTo(idx); // click to center }); el.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); var idx = parseInt(el.getAttribute("data-index"), 10); goTo(idx); } if(e.key === "ArrowRight"){ e.preventDefault(); next(); } if(e.key === "ArrowLeft"){ e.preventDefault(); prev(); } }); }); applyState(); var auto = setInterval(next, 3500); ["pointerdown","touchstart","keydown"].forEach(function(evt){ document.addEventListener(evt, function(){ if(auto){ clearInterval(auto); auto = null; } }, { once:true, passive:true }); }); } // Progressive quiz var steps = [ { q: "Wähle dein Geschlecht", options: ["Mann","Frau"] }, { q: "Welche Altersgruppe passt zu dir?", options: ["18–24","25–34","35–44","45+"] }, { q: "Worauf hast du Lust?", options: ["Locker chatten","Ernsthafte Beziehung","Mal sehen"] } ]; var answers = []; var step = 0; var $q = document.getElementById("quiz-q"); var $opts = document.getElementById("quiz-opts"); var $progress = document.getElementById("quiz-progress"); function renderStep(){ if(step >= steps.length){ var quiz = document.getElementById("quiz"); if(quiz){ quiz.innerHTML = '<div class="quiz__card"><div class="quiz__q">Danke! Wir bereiten dein Match vor…</div></div>'; } // window.location.href = "/next"; // replace with your target if needed return; } var s = steps[step]; $q.textContent = s.q; $opts.innerHTML = ""; $progress.textContent = (step+1)+"/"+steps.length; s.options.forEach(function(label, idx){ var btn = document.createElement("button"); btn.className = "qbtn"; btn.type = "button"; btn.setAttribute("aria-label", label); btn.textContent = label; btn.addEventListener("click", function(){ answers[step] = { index: idx, label: label }; step++; renderStep(); }); $opts.appendChild(btn); }); var box = document.getElementById("quiz"); if(box) box.scrollIntoView({ behavior:"smooth", block:"start" }); } renderStep(); })(); </script> </body> </html>
+    <!-- 顶部导航 -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 h-16 flex items-center justify-between px-4 shadow-sm">
+        <div class="w-10"></div> <!-- 占位符 -->
+        <div class="flex-1 flex justify-center">
+            <!-- Logo: 注意，如果这个链接失效，你需要下载这个svg图片放到 assets 文件夹里 -->
+            <img src="https://romanceast.com/land-static/svg/logos/black/romanceast.svg" alt="Romanceast" class="h-6 object-contain">
+        </div>
+        <button class="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+        </button>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="flex-1 pt-20 pb-10 overflow-x-hidden">
+        
+        <!-- Hero 标题 -->
+        <div class="text-center px-4 mt-8 mb-6 max-w-2xl mx-auto animate-fade-in-up">
+            <h1 class="font-semibold text-2xl md:text-4xl mb-4 leading-tight">
+                Nutze deine Chance auf ein <span class="text-[#ea4c89]">qualitativ hochwertiges</span> Match
+            </h1>
+            <p class="text-gray-500 text-sm md:text-lg leading-relaxed max-w-xs mx-auto md:max-w-lg">
+                Fülle kurz den Fragebogen aus und starte mit dem Online-Dating, wie es dir gefällt.
+            </p>
+        </div>
+
+        <!-- 个人资料卡片展示 (修复版) -->
+        <div class="w-full py-4 overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="card-stack">
+                <!-- 左卡片 -->
+                <div class="profile-card card-2 w-32 h-44 rounded-2xl border-4 border-white overflow-hidden bg-gray-200">
+                    <img src="https://i.gstatvb.com/fc0a4f65002a32153a0e829f960f5d3f1753962528.rng.webp" class="w-full h-full object-cover">
+                </div>
+                <!-- 中间主卡片 -->
+                <div class="profile-card card-1 w-48 h-64 rounded-2xl border-4 border-white overflow-hidden bg-gray-200 shadow-2xl">
+                    <img src="https://i.gstatvb.com/51e374c607fd9ce468cad39b242dc8f11753962528.rng.webp" class="w-full h-full object-cover">
+                    <div class="absolute top-1/2 right-2 -translate-y-1/2 w-4 h-4 bg-[#2ECC71] rounded-full border-2 border-white shadow-sm z-10"></div>
+                </div>
+                <!-- 右卡片 -->
+                <div class="profile-card card-3 w-32 h-44 rounded-2xl border-4 border-white overflow-hidden bg-gray-200">
+                    <img src="https://i.gstatvb.com/c1e63704a94bfd2f12cf8a2f122bbd901753962529.rng.webp" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+
+        <!-- 性别选择按钮 -->
+        <div class="max-w-md mx-auto px-4 py-8 animate-fade-in-up" style="animation-delay: 0.4s;">
+            <h3 class="text-center font-bold text-[#FF4036] mb-6 tracking-wide uppercase text-xs md:text-sm">
+                Wähle dein Geschlecht
+            </h3>
+            <div class="flex gap-4 justify-center">
+                <!-- 按钮：男 -->
+                <button onclick="selectGender('male')" class="flex-1 bg-white rounded-2xl shadow-sm border border-transparent p-6 flex flex-col items-center gap-3 hover:shadow-lg hover:border-[#FF4036] hover:-translate-y-1 transition-all duration-300 group">
+                    <span class="text-4xl group-hover:scale-110 transition-transform">👨</span>
+                    <span class="font-semibold text-gray-800">Mann</span>
+                </button>
+                <!-- 按钮：女 -->
+                <button onclick="selectGender('female')" class="flex-1 bg-white rounded-2xl shadow-sm border border-transparent p-6 flex flex-col items-center gap-3 hover:shadow-lg hover:border-[#FF4036] hover:-translate-y-1 transition-all duration-300 group">
+                    <span class="text-4xl group-hover:scale-110 transition-transform">👩</span>
+                    <span class="font-semibold text-gray-800">Frau</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部 Footer -->
+    <footer class="bg-gray-50 py-8 border-t border-gray-200 mt-auto">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="flex flex-wrap justify-center gap-2 mb-6 text-xs text-gray-400">
+                <a href="#" class="hover:text-gray-800">Nutzungsbedingungen</a>
+                <span>•</span>
+                <a href="#" class="hover:text-gray-800">Datenschutzrichtlinie</a>
+                <span>•</span>
+                <a href="#" class="hover:text-gray-800">Cookie-Richtlinie</a>
+                <span>•</span>
+                <a href="#" class="hover:text-gray-800">Impressum</a>
+            </div>
+            <div class="text-xs text-gray-400 mb-4">
+                © 2025 Romanceast. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 简单的交互脚本 -->
+    <script>
+        function selectGender(gender) {
+            // 这里你可以修改点击后的跳转逻辑
+            alert('你选择了: ' + (gender === 'male' ? 'Mann' : 'Frau'));
+            // 例如跳转： window.location.href = "https://your-next-page.com";
+        }
+    </script>
+
+</body>
+</html>
